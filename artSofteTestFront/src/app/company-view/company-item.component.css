@@ -1,0 +1,11 @@
+.companyItem {
+  border: solid;
+  display: flex;
+  justify-content: left;
+
+}
+
+.companyLogo {
+  width: 200px;
+  height: auto;
+}

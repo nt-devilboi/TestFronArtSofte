@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: "", component: LayoutComponent, children: [
       {path: "list", component: CompanyListComponent},
-      {path: "detail:id", component: CompanyDetailComponent},
+      {path: "detail/:id", component: CompanyDetailComponent},
       {path: "map", component: CompanyYandexMapComponent}
     ]
   }

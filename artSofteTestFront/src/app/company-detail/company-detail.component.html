@@ -1,1 +1,14 @@
 <p>company-detail works!</p>
+<div *ngIf="company; else notCompany">
+<p>
+
+</p>
+</div>
+
+
+<ng-template #notCompany>
+<p>
+    компания не нашлась с таким id
+</p>
+
+</ng-template>

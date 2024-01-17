@@ -8,6 +8,9 @@ import { CompanyYandexMapComponent } from './company-yandex-map/company-yandex-m
 import { LayoutComponent } from './layout/layout.component';
 import {RouterModule, RouterOutlet} from "@angular/router";
 import {RoutingModule} from "./routing/routing.module";
+import {HttpClientModule} from "@angular/common/http";
+import { CompanyItemComponent } from './company-view/company-item.component';
+import { CompanySortComponent } from './company-sort/company-sort.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import {RoutingModule} from "./routing/routing.module";
     CompanyListComponent,
     CompanyDetailComponent,
     CompanyYandexMapComponent,
-    LayoutComponent
+    LayoutComponent,
+    CompanyItemComponent,
+    CompanySortComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     RoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
