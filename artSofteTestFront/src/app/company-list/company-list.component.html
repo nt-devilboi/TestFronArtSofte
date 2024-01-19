@@ -1,4 +1,8 @@
-<p>company-list works!</p>
+<div style="flex-wrap: nowrap; display: flex; gap: 5px">
+  <app-company-sort [SortBy]="SortByType">type</app-company-sort>
+  <app-company-sort [SortBy]="SortByName">Name</app-company-sort>
+  <app-company-sort [SortBy]="SortByIndustry">Industry</app-company-sort>
+</div>
 <div class="companyList">
-  <div *ngFor="let item of Companies()"><app-company-view [company]="item"></app-company-view></div>
+    <div *ngFor="let item of Companies"><app-company-view [company]="item"></app-company-view></div>
 </div>

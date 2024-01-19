@@ -1,21 +1,27 @@
 import {Injectable} from "@angular/core";
 import {CompanyItem} from "../Interfaces/CompanyItem";
+import {find, map, Observable, Subject} from "rxjs";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class CompanyStore {
-    public companies: CompanyItem[] = []
+  public companies$: Subject<CompanyItem[]> = new Subject<CompanyItem[]>;
+  public companies: CompanyItem[] = []
 
-    public Set(companies: CompanyItem[]) {
-        this.companies = companies;
-    }
+  constructor() {
+    this.companies$.subscribe(x => this.companies = x)
+  }
+  public Set(companies: CompanyItem[]) {
+    this.companies$.next(companies);
+  }
 
-    public Get(): ReadonlyArray<CompanyItem> {
-        return this.companies;
-    }
+  public subscribe(data: CompanyItem[]): void {
+    this.companies$.subscribe(x => data = x);
+  }
 
-    public getById(id: number): CompanyItem | undefined {
-        return this.companies.find(x => x.id == id)
-    }
+  public Sort(action: (i: CompanyItem, j: CompanyItem) => number): void {
+    var CompaniesSorted = this.companies.sort(action);
+    this.companies$.next(CompaniesSorted)
+  }
 }
