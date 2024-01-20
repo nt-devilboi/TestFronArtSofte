@@ -2,6 +2,7 @@
   <app-company-sort [SortBy]="SortByType">type</app-company-sort>
   <app-company-sort [SortBy]="SortByName">Name</app-company-sort>
   <app-company-sort [SortBy]="SortByIndustry">Industry</app-company-sort>
+    <app-company-filter> </app-company-filter>
 </div>
 <div class="companyList">
     <div *ngFor="let item of Companies"><app-company-view [company]="item"></app-company-view></div>

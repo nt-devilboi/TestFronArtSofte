@@ -1,12 +1,12 @@
-<p>company-view works!</p>
-
-<div class="companyItem" *ngIf="company">
-  <a [routerLink]="['/detail', company?.id]">
-    <img src="{{company.logo}}" class="companyLogo">
-    <div>
-      <p>Business name:{{company.business_name}}</p>
-      <p>Industry:{{company.industry}}</p>
-      <p>Type:{{company.type}}</p>
-    </div>
-  </a>
+<div class="centeredContent">
+  <div class="companyItem" *ngIf="company">
+    <a [routerLink]="['/detail', company.id]" class="companyLink">
+      <img alt="Лого компаний" src="{{company.logo}}" class="companyLogo">
+      <div class="companyDetails">
+        <h2>{{company.business_name}}</h2>
+        <p><strong>Industry:</strong> {{company.industry}}</p>
+        <p><strong>Type:</strong> {{company.type}}</p>
+      </div>
+    </a>
+  </div>
 </div>

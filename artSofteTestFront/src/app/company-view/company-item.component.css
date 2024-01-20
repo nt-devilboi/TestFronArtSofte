@@ -1,11 +1,31 @@
-.companyItem {
-  border: solid;
+.centeredContent {
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  align-items: center;
+}
 
+.companyItem {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.companyLink {
+  text-decoration: none;
+  color: inherit;
 }
 
 .companyLogo {
-  width: 200px;
+  max-width: 50%;
   height: auto;
+}
+
+.companyDetails {
+  padding-left: 15px;
+}
+
+.companyDetails h2 {
+  margin: 0;
+  font-size: 1.2em;
 }
