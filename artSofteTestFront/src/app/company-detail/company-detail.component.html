@@ -1,8 +1,17 @@
-<p>company-detail works!</p>
-<div *ngIf="company; else notCompany">
-<p>
+<button routerLink="/list">
+  К списку
+</button>
 
-</p>
+
+<div *ngIf="company; else notCompany">
+
+  <img src="{{ company.logo }}" alt="Company Logo">
+  <h1>{{ company.business_name }}</h1>
+  <p><strong>Business Type:</strong> {{ company.type }}</p>
+  <p><strong>Industry:</strong> {{ company.industry }}</p>
+  <p><strong>Phone Number:</strong> {{ company.phone_number }}</p>
+  <p><strong>Full Address:</strong> {{ company.full_address }}</p>
+  <p><strong>Catch Phrase:</strong> {{ company.catch_phrase }}</p>
 </div>
 
 
