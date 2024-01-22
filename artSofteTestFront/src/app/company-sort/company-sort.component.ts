@@ -9,7 +9,7 @@ import {CompanyStore} from "../../Services/company-store.service";
 export class CompanySortComponent {
   @Input("SortBy") public SortBy?: () => void;
 
-  constructor(private CompanyStore:CompanyStore) { // ахаххахах, прикол, я типо не использую CompanyStore хотя на самом деле я передовую сюда функцию в котой он используется, жееееееесть, звучит как костыль // todo: задать вопрос
+  constructor(private _companyStore:CompanyStore) { // ахаххахах, прикол, я типо не использую CompanyStore хотя на самом деле я перекидываю сюда функцию в котой он используется, жееееееесть, звучит как костыль // todo: хочу получить ответ: это костыль или норм?
   }
 
   public sort() {

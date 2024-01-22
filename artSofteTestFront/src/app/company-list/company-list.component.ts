@@ -11,26 +11,26 @@ import {CompanyItem} from "../../Interfaces/CompanyItem";
 })
 export class CompanyListComponent implements OnInit {
   get Companies(): CompanyItem[] {
-    return this.CompanyStore.companies;
+    return this._companyStore.companies;
   }
 
-  constructor(private CompaniesService: CompanyService, private CompanyStore: CompanyStore) {
+  constructor(private _companiesService: CompanyService, private _companyStore: CompanyStore) {
   }
 
   ngOnInit(): void {
-    var companiesResponse = this.CompaniesService.GetCompany(50);
-    companiesResponse.subscribe(x => this.CompanyStore.Set(x));
+    var companiesResponse = this._companiesService.GetCompany(50);
+    companiesResponse.subscribe(x => this._companyStore.Set(x));
   }
 
-  public SortByType(): void {
-    this.CompanyStore.Sort((x, y) => x.type.localeCompare(y.type));
+  public sortByType(): void {
+    this._companyStore.Sort((x, y) => x.type.localeCompare(y.type));
   }
 
-  public SortByName(): void {
-    this.CompanyStore.Sort((x,y) => x.business_name.localeCompare(y.business_name))
+  public sortByName(): void {
+    this._companyStore.Sort((x, y) => x.business_name.localeCompare(y.business_name))
   }
 
-  public SortByIndustry(): void {
-    this.CompanyStore.Sort((i, j) =>  i.industry.localeCompare(j.industry))
+  public sortByIndustry(): void {
+    this._companyStore.Sort((i, j) =>  i.industry.localeCompare(j.industry))
   }
 }
